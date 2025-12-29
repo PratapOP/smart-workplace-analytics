@@ -1,0 +1,113 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <title>Smart Workplace Analytics</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <script defer src="js/auth.js"></script>
+    <script defer src="js/dashboard.js"></script>
+    <script defer src="js/charts.js"></script>
+    <script defer src="js/ai.js"></script>
+    <script defer src="js/consent.js"></script>
+    <s
+    </head>
+
+    <body>
+
+    <!-- NAVBAR -->
+    <header class="navbar">
+    <div class="logo">Smart Workplace</div>
+    <nav>
+        <span id="userRoleBadge"></span>
+    </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+    <h1>Workplace Analytics Dashboard</h1>
+    <p>Turning workforce data into meaningful decisions</p>
+    </section>
+
+    <!-- DASHBOARD -->
+    <main class="dashboard">
+
+    <!-- ATTENDANCE -->
+    <section class="card" data-role="HR MANAGER EMPLOYEE">
+        <h2>Attendance Overview</h2>
+        <canvas id="attendanceChart"></canvas>
+    </section>
+
+    <!-- STRESS -->
+    <section class="card" data-role="HR MANAGER EMPLOYEE">
+        <h2>Stress & Wellbeing</h2>
+        <canvas id="stressChart"></canvas>
+    </section>
+
+    <!-- PRODUCTIVITY -->
+    <section class="card" data-role="HR MANAGER">
+        <h2>Productivity Metrics</h2>
+        <canvas id="productivityChart"></canvas>
+    </section>
+
+    <!-- ENGAGEMENT -->
+    <section class="card" data-role="HR MANAGER">
+        <h2>Engagement Health</h2>
+        <canvas id="engagementChart"></canvas>
+    </section>
+
+    <!-- AI SUGGESTIONS -->
+    <section class="card ai-card" data-role="HR MANAGER EMPLOYEE">
+        <h2>AI Insights</h2>
+        <div id="aiSuggestions">
+        <p class="muted">AI suggestions will appear here.</p>
+        </div>
+    </section>
+
+    </main>
+
+    <!-- TREND INTELLIGENCE -->
+    <section class="card trend-card" data-role="HR MANAGER">
+    <div class="trend-header">
+        <h2>Trend Intelligence</h2>
+        <div class="trend-toggle">
+        <button class="trend-btn active" data-period="weekly">Weekly</button>
+        <button class="trend-btn" data-period="monthly">Monthly</button>
+        </div>
+    </div>
+
+    <div id="trendInsights" class="trend-insights"></div>
+    </section>
+
+    <!-- CONSENT MODAL -->
+    <div id="consentOverlay" class="consent-overlay hidden">
+    <div class="consent-modal">
+        <h2>Privacy & Data Consent</h2>
+
+        <p>
+        To provide meaningful workplace insights, this platform processes
+        attendance, productivity, engagement, and wellbeing-related data.
+        </p>
+
+        <ul>
+        <li>Stress and wellbeing data is <strong>never visible individually</strong> to HR or managers</li>
+        <li>Only <strong>aggregated insights</strong> are used for organizational decisions</li>
+        <li>AI suggestions are <strong>advisory only</strong>, not evaluative</li>
+        <li>You may withdraw consent at any time</li>
+        </ul>
+
+        <div class="consent-actions">
+        <button id="declineConsent" class="btn secondary">Decline</button>
+        <button id="acceptConsent" class="btn primary">I Agree</button>
+        </div>
+    </div>
+    </div>
+
+
+    <footer>
+    <p>© 2025 Smart Workplace Analytics</p>
+    </footer>
+
+    </body>
+    </html>
