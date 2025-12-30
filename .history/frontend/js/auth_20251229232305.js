@@ -3,4 +3,4 @@
     role: "HR" // HR | MANAGER | EMPLOYEE
     };
 
-    document.getElementById("userRoleBadge").innerText = currentUser.role;
+document.getElementById("userRoleBadge").innerText = currentUser.role;

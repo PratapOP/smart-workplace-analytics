@@ -1,0 +1,26 @@
+from flask import Flask, request, jsonify
+import joblib
+import numpy as np
+
+app = Flask(__name__)
+model = joblib.load("risk_model.joblib")
+
+@app.route("/api/predict-risk", methods=["POST"])
+def predict_risk():
+    data = request.json
+
+    features = np.array([[
+        data["stress"],
+        data["sleep"],
+        data["workHours"],
+        data["engagement"],
+        data["productivity"]
+    ]])
+
+    probs = model.predict_proba(features)[0]
+    prediction = int(np.argmax(probs))
+
+    return jsonify({
+        "risk_level": prediction,
+        "probabilities": probs.tolist()
+    })
