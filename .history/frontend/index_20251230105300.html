@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Smart Workplace Analytics</title>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- Charts -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Core Scripts (order matters) -->
+  <script defer src="js/auth.js"></script>
+  <script defer src="js/dashboard.js"></script>
+  <script defer src="js/charts.js"></script>
+  <script defer src="js/consent.js"></script>
+  <script defer src="js/alerts.js"></script>
+  <script defer src="js/trends.js"></script>
+  <script defer src="js/reports.js"></script>
+  <script defer src="js/ai.js"></script>
+</head>
+
+<body>
+
+  <!-- ================= NAVBAR ================= -->
+  <header class="navbar">
+    <div class="navbar-left">
+      <h1 class="logo">Smart Workplace</h1>
+    </div>
+
+    <div class="navbar-right">
+      <span id="userRoleBadge" class="role-badge"></span>
+    </div>
+  </header>
+
+  <!-- ================= HERO ================= -->
+  <section class="hero">
+    <h2>Workplace Analytics Dashboard</h2>
+    <p>
+      Ethical • Explainable • Data-Driven Insights for Modern Organizations
+    </p>
+  </section>
+
+  <!-- ================= DASHBOARD ================= -->
+  <main class="dashboard">
+
+    <!-- ALERTS -->
+    <section class="card alert-card" data-role="HR MANAGER">
+      <h3>Workplace Alerts</h3>
+      <div id="alertsContainer"></div>
+    </section>
+
+    <!-- TREND INTELLIGENCE -->
+    <section class="card trend-card" data-role="HR MANAGER">
+      <div class="trend-header">
+        <h3>Trend Intelligence</h3>
+        <div class="trend-toggle">
+          <button class="trend-btn active" data-period="weekly">Weekly</button>
+          <button class="trend-btn" data-period="monthly">Monthly</button>
+        </div>
+      </div>
+      <div id="trendInsights"></div>
+    </section>
+
+    <!-- AI SUGGESTIONS -->
+    <section class="card ai-card" data-role="HR MANAGER EMPLOYEE">
+      <h3>AI Suggestions</h3>
+      <div id="aiSuggestions"></div>
+    </section>
+
+    <!-- ANALYTICS CHARTS -->
+    <section class="card" data-role="HR MANAGER EMPLOYEE">
+      <h3>Attendance Overview</h3>
+      <canvas id="attendanceChart"></canvas>
+    </section>
+
+    <section class="card" data-role="HR MANAGER EMPLOYEE">
+      <h3>Stress & Wellbeing</h3>
+      <canvas id="stressChart"></canvas>
+    </section>
+
+    <section class="card" data-role="HR MANAGER">
+      <h3>Productivity Metrics</h3>
+      <canvas id="productivityChart"></canvas>
+    </section>
+
+    <section class="card" data-role="HR MANAGER">
+      <h3>Engagement Health</h3>
+      <canvas id="engagementChart"></canvas>
+    </section>
+
+    <!-- REPORTS -->
+    <section class="card report-card" data-role="HR MANAGER">
+      <h3>Export & Reporting</h3>
+
+      <div class="report-controls">
+        <div class="control-group">
+          <label>Report Scope</label>
+          <select id="reportScope">
+            <option value="team">Team Summary</option>
+            <option value="org">Organization Overview</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label>Date Range</label>
+          <input type="date" id="startDate"/>
+          <input type="date" id="endDate"/>
+        </div>
+      </div>
+
+      <div class="export-actions">
+        <button class="export-btn pdf">Export PDF</button>
+        <button class="export-btn excel">Export Excel</button>
+        <button class="export-btn csv">Export CSV</button>
+      </div>
+
+      <p class="muted report-note">
+        Individual wellbeing data is anonymized and never included in exports.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="footer">
+    <p>© 2025 Smart Workplace Analytics</p>
+  </footer>
+
+</body>
+</html>

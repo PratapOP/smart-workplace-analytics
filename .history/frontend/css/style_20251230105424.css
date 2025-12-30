@@ -1,0 +1,277 @@
+/* ===============================
+   DESIGN TOKENS
+================================ */
+:root {
+  --bg-main: #f8fafc;
+  --bg-card: #ffffff;
+  --bg-muted: #f1f5f9;
+
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+
+  --accent-primary: #4f46e5;
+  --accent-success: #16a34a;
+  --accent-warning: #f59e0b;
+  --accent-danger: #dc2626;
+
+  --border-light: #e2e8f0;
+
+  --radius-lg: 14px;
+  --radius-md: 10px;
+
+  --shadow-soft: 0 10px 30px rgba(15, 23, 42, 0.08);
+  --shadow-hover: 0 18px 45px rgba(15, 23, 42, 0.12);
+}
+
+/* ===============================
+   GLOBAL RESET
+================================ */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: var(--bg-main);
+  color: var(--text-primary);
+  line-height: 1.6;
+}
+
+/* ===============================
+   NAVBAR
+================================ */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--bg-card);
+  padding: 1rem 3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.role-badge {
+  background: var(--accent-primary);
+  color: #ffffff;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+/* ===============================
+   HERO
+================================ */
+.hero {
+  padding: 4rem 3rem;
+  background: linear-gradient(135deg, #6366f1, #4f46e5);
+  color: #ffffff;
+}
+
+.hero h2 {
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.hero p {
+  font-size: 1.05rem;
+  opacity: 0.9;
+}
+
+/* ===============================
+   DASHBOARD LAYOUT
+================================ */
+.dashboard {
+  max-width: 1280px;
+  margin: 3rem auto;
+  padding: 0 2.5rem;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  gap: 2.5rem;
+}
+
+/* ===============================
+   CARD SYSTEM
+================================ */
+.card {
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-soft);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-hover);
+}
+
+.card h3 {
+  margin-bottom: 1.4rem;
+  font-size: 1.1rem;
+}
+
+/* ===============================
+   ALERT CARD
+================================ */
+.alert-card {
+  border-left: 6px solid var(--accent-warning);
+}
+
+.alert {
+  padding: 1rem 1.2rem;
+  border-radius: var(--radius-md);
+  background: var(--bg-muted);
+  margin-bottom: 1rem;
+}
+
+.alert-title {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.alert-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+/* ===============================
+   TREND INTELLIGENCE
+================================ */
+.trend-card {
+  border-left: 6px solid var(--accent-success);
+}
+
+.trend-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.4rem;
+}
+
+.trend-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.trend-btn {
+  padding: 0.35rem 1rem;
+  border-radius: 999px;
+  border: 1px solid var(--border-light);
+  background: #ffffff;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.trend-btn.active {
+  background: var(--accent-success);
+  color: #ffffff;
+  border-color: var(--accent-success);
+}
+
+/* ===============================
+   AI SUGGESTIONS
+================================ */
+.ai-card {
+  border-left: 6px solid #8b5cf6;
+}
+
+.ai-item {
+  background: var(--bg-muted);
+  border-radius: var(--radius-md);
+  padding: 1.2rem;
+  margin-bottom: 1rem;
+}
+
+.ai-title {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.ai-confidence {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+/* ===============================
+   REPORTING
+================================ */
+.report-card {
+  border-left: 6px solid var(--accent-primary);
+}
+
+.report-controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.control-group label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.2rem;
+}
+
+.control-group select,
+.control-group input {
+  padding: 0.5rem 0.7rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  font-size: 0.85rem;
+}
+
+.export-actions {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.export-btn {
+  padding: 0.5rem 1.3rem;
+  border-radius: 8px;
+  border: none;
+  color: #ffffff;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.export-btn.pdf { background: var(--accent-danger); }
+.export-btn.excel { background: var(--accent-success); }
+.export-btn.csv { background: var(--accent-primary); }
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* ===============================
+   UTILITY
+================================ */
+.muted {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
