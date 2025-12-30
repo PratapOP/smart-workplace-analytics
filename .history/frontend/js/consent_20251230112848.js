@@ -33,12 +33,12 @@
      * Restore dashboard access
      */
     function unblockDashboard() {
-    document.body.style.overflow = "auto";
     const cards = document.querySelectorAll(".card");
     cards.forEach(card => {
         card.style.filter = "none";
         card.style.pointerEvents = "auto";
     });
+    document.body.style.overflow = "auto";
     }
 
     /**
@@ -81,14 +81,7 @@
         showConsentBlockedState();
         modal.remove();
     });
-
-    document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("privacyBtn");
-    if (!btn) return;
-    btn.addEventListener("click", () => {
-        localStorage.removeItem("workplace_analytics_consent");
-        location.reload();
-    });
+    }
 
     /**
      * Replace dashboard content if consent is declined
@@ -107,4 +100,5 @@
         `;
         card.style.filter = "none";
     });
+    
     }

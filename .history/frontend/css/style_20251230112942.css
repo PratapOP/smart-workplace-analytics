@@ -291,12 +291,3 @@ canvas {
      max-height: 260px;
      display: block;
 }
-.privacy-btn {
-     margin-right: 1rem;
-     background: transparent;
-     border: 1px solid var(--border-light);
-     padding: 6px 12px;
-     border-radius: 999px;
-     cursor: pointer;
-     font-size: 0.75rem;
-}

@@ -61,10 +61,9 @@ def train_and_save_model():
     # Probability calibration
     calibrated_model = CalibratedClassifierCV(
         base_model,
-        method="sigmoid",
-        cv=2
+        method="isotonic",
+        cv=3
     )
-
 
     # Train on full dataset (safe for small synthetic data)
     calibrated_model.fit(X, y)
@@ -73,6 +72,7 @@ def train_and_save_model():
     joblib.dump(calibrated_model, "risk_model.joblib")
 
     print("✅ Calibrated Decision Tree model trained and saved as risk_model.joblib")
+
 
 
 if __name__ == "__main__":

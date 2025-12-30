@@ -61,10 +61,9 @@ def train_and_save_model():
     # Probability calibration
     calibrated_model = CalibratedClassifierCV(
         base_model,
-        method="sigmoid",
-        cv=2
+        method="isotonic",
+        cv=3
     )
-
 
     # Train on full dataset (safe for small synthetic data)
     calibrated_model.fit(X, y)

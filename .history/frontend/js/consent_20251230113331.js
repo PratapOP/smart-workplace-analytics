@@ -87,8 +87,8 @@
     if (!btn) return;
     btn.addEventListener("click", () => {
         localStorage.removeItem("workplace_analytics_consent");
-        location.reload();
-    });
+            location.reload();
+    }
 
     /**
      * Replace dashboard content if consent is declined

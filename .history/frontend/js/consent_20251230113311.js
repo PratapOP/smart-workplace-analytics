@@ -83,12 +83,13 @@
     });
 
     document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("privacyBtn");
-    if (!btn) return;
-    btn.addEventListener("click", () => {
-        localStorage.removeItem("workplace_analytics_consent");
-        location.reload();
-    });
+  const btn = document.getElementById("privacyBtn");
+  if (!btn) return;
+
+  btn.addEventListener("click", () => {
+    localStorage.removeItem("workplace_analytics_consent");
+    location.reload();
+    }
 
     /**
      * Replace dashboard content if consent is declined

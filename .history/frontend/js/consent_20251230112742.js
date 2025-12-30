@@ -21,24 +21,24 @@
      * Block all dashboard cards
      */
     function blockDashboard() {
-    document.body.style.overflow = "hidden";
     const cards = document.querySelectorAll(".card");
     cards.forEach(card => {
         card.style.filter = "blur(6px)";
         card.style.pointerEvents = "none";
     });
+    document.body.style.overflow = "hidden";
     }
 
     /**
      * Restore dashboard access
      */
     function unblockDashboard() {
-    document.body.style.overflow = "auto";
     const cards = document.querySelectorAll(".card");
     cards.forEach(card => {
         card.style.filter = "none";
         card.style.pointerEvents = "auto";
     });
+    document.body.style.overflow = "auto";
     }
 
     /**
@@ -81,20 +81,12 @@
         showConsentBlockedState();
         modal.remove();
     });
-
-    document.addEventListener("DOMContentLoaded", () => {
-    const btn = document.getElementById("privacyBtn");
-    if (!btn) return;
-    btn.addEventListener("click", () => {
-        localStorage.removeItem("workplace_analytics_consent");
-        location.reload();
-    });
+    }
 
     /**
      * Replace dashboard content if consent is declined
      */
     function showConsentBlockedState() {
-    document.body.style.overflow = "hidden";
     const cards = document.querySelectorAll(".card");
 
     cards.forEach(card => {
@@ -107,4 +99,5 @@
         `;
         card.style.filter = "none";
     });
+    document.body.style.overflow = "hidden";
     }

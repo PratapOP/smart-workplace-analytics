@@ -1,0 +1,128 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login | Smart Workplace Analytics</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <style>
+        /* Login-specific layout (isolated) */
+        body {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: linear-gradient(135deg, #6366f1, #4f46e5);
+        }
+
+        .login-container {
+        background: #ffffff;
+        padding: 2.8rem;
+        border-radius: 16px;
+        width: 100%;
+        max-width: 420px;
+        box-shadow: 0 25px 60px rgba(0, 0, 0, 0.18);
+        }
+
+        .login-header {
+        text-align: center;
+        margin-bottom: 2rem;
+        }
+
+        .login-header h2 {
+        margin-bottom: 0.4rem;
+        font-size: 1.6rem;
+        }
+
+        .login-header p {
+        font-size: 0.85rem;
+        color: #64748b;
+        }
+
+        .login-group {
+        margin-bottom: 1.4rem;
+        }
+
+        .login-group label {
+        display: block;
+        font-size: 0.8rem;
+        margin-bottom: 0.3rem;
+        color: #334155;
+        }
+
+        .login-group input,
+        .login-group select {
+        width: 100%;
+        padding: 0.6rem 0.7rem;
+        border-radius: 10px;
+        border: 1px solid #e2e8f0;
+        font-size: 0.9rem;
+        }
+
+        .login-btn {
+        width: 100%;
+        padding: 0.7rem;
+        border: none;
+        border-radius: 12px;
+        background: #4f46e5;
+        color: white;
+        font-size: 0.9rem;
+        cursor: pointer;
+        margin-top: 0.8rem;
+        }
+
+        .login-footer {
+        text-align: center;
+        margin-top: 1.4rem;
+        font-size: 0.75rem;
+        color: #64748b;
+        }
+    </style>
+    </head>
+
+    <body>
+
+    <div class="login-container">
+        <div class="login-header">
+        <h2>Smart Workplace</h2>
+        <p>Secure Access • Ethical Analytics</p>
+        </div>
+
+        <form id="loginForm">
+
+        <div class="login-group">
+            <label for="email">Work Email</label>
+            <input
+            type="email"
+            id="email"
+            placeholder="you@company.com"
+            required
+            />
+        </div>
+
+        <div class="login-group">
+            <label for="role">Role</label>
+            <select id="role" required>
+            <option value="">Select Role</option>
+            <option value="EMPLOYEE">Employee</option>
+            <option value="MANAGER">Manager</option>
+            <option value="HR">HR</option>
+            </select>
+        </div>
+
+        <button type="submit" class="login-btn">
+            Continue
+        </button>
+
+        </form>
+
+        <div class="login-footer">
+        Access is role-based. No personal data is shared without consent.
+        </div>
+    </div>
+
+    </body>
+    <script src="js/login.js"></script>
+    </html>
